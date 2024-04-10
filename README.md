@@ -78,7 +78,7 @@ Les résultats varient en fonction des images testées, mettant en lumière cert
 ### Conclusion
 Les CNN sont idéaux pour classer les pièces de monnaie car ils capturent automatiquement les traits distinctifs des images, facilitant ainsi leur identification malgré les variations, mais cela exige beaucoup de travail et de pretraitements pour obtenir des resultats optimals.
 
-Lien vers le projet + la BDD utilisée: [coin_detection](https://drive.google.com/file/d/1lC_kEy5VVAjT6xC7fkIf1ExWpPVXJ_ia/view?usp=sharing)
+Lien vers le projet + la BDD utilisée: [Coin_Detection](https://drive.google.com/file/d/1lC_kEy5VVAjT6xC7fkIf1ExWpPVXJ_ia/view?usp=sharing)
 
 
 ## Contributeurs:

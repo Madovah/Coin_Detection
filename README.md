@@ -56,13 +56,13 @@ Un ensemble d’images multi-coins (melange) pour le test. </p>
 - Détection de contours avec OpenCV
 -  Filtrage de contours basé sur la taille et par aire: réduire le bruit (suppression des contours inutiles), et création de masque pour isoler la région d’interet ( pièce)
 -  Extraction et regroupement de contours dans une liste
-![image](https://github.com/Madovah/Coin_Detection/assets/139919291/a104134c-8493-42c6-9cd4-cafe4adb075c)
+
 
 
 ### Méthode de Classification et evaluation
 Nous avons choisi de faire la classification CNN: une méthode efficace pour le traitement de d’images
 Mais pourquoi? : les CNN sont capable de trouver et extraire des caractéristiques pertinentes dans les données, parfois invisible pour le programmeur a l’œil nu. Cela dit, la plupart des pièces de monnaies se ressemblent dans plusieurs caractéristiques: diamètre, jeux de couleurs, symboles inscrits, etc.. c’est pour cela que nous avons opté pour cette méthode ( influencées par la contrainte de temps et charge de travail aussi), l’évaluation du modèle se fait dans le processus de l’entrainement (General accuracy and loss, validation accuracy and loss),
-![image](https://github.com/Madovah/Coin_Detection/assets/139919291/cdac2e47-eeb4-4027-8355-856df230137d)
+
 
 ### Résultats et Observations
 Les résultats varient en fonction des images testées, mettant en lumière certaines limitations de notre approche, telles que la difficulté à distinguer des pièces avec des caractéristiques très similaires ou des problèmes liés à l'orientation et au chevauchement des pièces. Cependant, notre modèle montre des performances prometteuses, en particulier avec des pièces de valeurs plus élevées.
@@ -77,6 +77,8 @@ Les résultats varient en fonction des images testées, mettant en lumière cert
 
 ### Conclusion
 Les CNN sont idéaux pour classer les pièces de monnaie car ils capturent automatiquement les traits distinctifs des images, facilitant ainsi leur identification malgré les variations, mais cela exige beaucoup de travail et de pretraitements pour obtenir des resultats optimals.
+
+Lien vers le projet + la BDD utilisée: [coin_detection](https://drive.google.com/file/d/1lC_kEy5VVAjT6xC7fkIf1ExWpPVXJ_ia/view?usp=sharing)
 
 
 ## Contributeurs:

@@ -61,7 +61,7 @@ Un ensemble d’images multi-coins (melange) pour le test. </p>
 
 ### Méthode de Classification et evaluation
 Nous avons choisi de faire la classification CNN: une méthode efficace pour le traitement de d’images
-Mais pourquoi? : les CNN sont capable de trouver et extraire des caractéristiques pertinentes dans les données, parfois invisible pour le programmeur a l’œil nu. Cela dit, la plupart des pièces de monnaies se ressemblent dans plusieurs caractéristiques: diamètre, jeux de couleurs, symboles inscrits, etc.. c’est pour cela que nous avons opté pour cette méthode ( influencées par la contrainte de temps et charge de travail aussi), l’évaluation du modèle se fait dans le processus de l’entrainement (General accuracy and loss, validation accuracy and loss),
+Mais pourquoi? : les CNN sont capable de trouver et extraire des caractéristiques pertinentes dans les données, parfois invisible pour le programmeur a l’œil nu. Cela dit, la plupart des pièces de monnaies se ressemblent dans plusieurs caractéristiques: diamètre, jeux de couleurs, symboles inscrits, etc.. c’est pour cela que nous avons opté pour cette méthode ( influencées par la contrainte de temps et charge de travail aussi), l’évaluation du modèle se fait dans le processus de l’entrainement (General accuracy and loss, validation accuracy and loss).
 
 
 ### Résultats et Observations

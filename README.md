@@ -84,4 +84,4 @@ Ce projet a été réalisé grâce à la contribution des membres suivants:</p>
         <li><strong>Sabine BELAID</strong></li>
         
    </ul>
-"# coins_detection" 
+

@@ -1,4 +1,4 @@
-# coin_detection
+# Coin_Detection
 <p>Ce projet se concentre sur la création d'un système automatisé de détection et de comptage de pièces dans des images, utilisant des techniques de vision par ordinateur, avec une base de données qui représente des pièces de monnaies ( euro) photographiés avec arrière plan plus ou moins homogène.</p>
 
 ## Pour Commencer

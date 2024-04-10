@@ -63,6 +63,9 @@ Un ensemble d’images multi-coins (melange) pour le test. </p>
 Nous avons choisi de faire la classification CNN: une méthode efficace pour le traitement de d’images
 Mais pourquoi? : les CNN sont capable de trouver et extraire des caractéristiques pertinentes dans les données, parfois invisible pour le programmeur a l’œil nu. Cela dit, la plupart des pièces de monnaies se ressemblent dans plusieurs caractéristiques: diamètre, jeux de couleurs, symboles inscrits, etc.. c’est pour cela que nous avons opté pour cette méthode ( influencées par la contrainte de temps et charge de travail aussi), l’évaluation du modèle se fait dans le processus de l’entrainement (General accuracy and loss, validation accuracy and loss).
 
+![image](https://github.com/Madovah/Coin_Detection/assets/139919291/7ac9a49d-bba3-4d3b-98db-55167d11e68c)
+
+
 
 ### Résultats et Observations
 Les résultats varient en fonction des images testées, mettant en lumière certaines limitations de notre approche, telles que la difficulté à distinguer des pièces avec des caractéristiques très similaires ou des problèmes liés à l'orientation et au chevauchement des pièces. Cependant, notre modèle montre des performances prometteuses, en particulier avec des pièces de valeurs plus élevées.

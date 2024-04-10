@@ -1,5 +1,5 @@
 # coin_detection
-<p>Ce projet vise à développer un programme capable de détecter et d'identifier des pièces de monnaie en euros à partir d'une image. La nécessité de ce projet découle de la volonté d'automatiser le comptage de la monnaie, facilitant ainsi la tâche dans divers scénarios tels que le tri de pièces collectées ou l'assistance dans des environnements de vente.</p>
+<p>Ce projet se concentre sur la création d'un système automatisé de détection et de comptage de pièces dans des images, utilisant des techniques de vision par ordinateur, avec une base de données qui représente des pièces de monnaies ( euro) photographiés avec arrière plan plus ou moins homogène.</p>
 
 ## Pour Commencer
 
@@ -23,7 +23,7 @@ Bibliotheques utilisées:
    Ouvrez un terminal et clonez le dépôt GitHub en utilisant la commande suivante :
 
    ```sh
-   git clone https://github.com/fati1905/coin_detection
+   git clone https://github.com/Madovah/Coin_Detection.git
    cd coin_detection
    ```
 ### Exécution
@@ -37,14 +37,12 @@ python main.py #pour tester
 
 
 ## La base de données:
-<p>La base de données comprend 8426 images représentant des pièces de monnaie de différentes valeurs, notamment des pièces de 2 euros, 1 euro, 50 centimes, 20 centimes, 10 centimes, 2 centimes et 1 centime. Ces images sont de haute qualité, ce qui les rend idéales pour l'entraînement de modèles de reconnaissance de pièces de monnaie.</p>
+<p>La base de données est composées de deux dossiers:
+un ensemble d’image étiquetés de pièces de données ( train): 2 euros, 1 euros, 50 cents, 20 cents, 10 cents, 5 cents, 2 cents, 1 cents et
+Un ensemble d’images multi-coins (melange) pour le test. </p>
 
-<p>Cette vaste collection d'images offre une variété de contextes et d'angles de vue, ce qui permettra à notre modèle de se familiariser avec différents scénarios rencontrés dans des applications réelles.</p>
 
 ![1c 73](https://github.com/fati1905/coin_detection/assets/81489719/845f0e95-8423-480a-b24d-bf1f807edd1d)
-
-<p>La base de données pour la partie testing comprend 92 images de pièces de monnaie capturées par les étudiants du Master 1 VMI (Vision et Machine Intelligente) à Paris Cité, dans le cadre du projet du module "Introduction à l'analyse d'images". Ces images prises avec des smartphones ordinaires et sur divers arrière-plans. Cette diversité constitue l'un des principaux défis de ce projet.</p>
-<p>Ci-dessous, vous trouverez un échantillon de quelques images extraites de notre base de données.</p>
 
 ![image](https://github.com/fati1905/coin_detection/assets/81489719/2ee0de51-bddd-4536-938a-2090caf84f20)
 
@@ -53,13 +51,18 @@ python main.py #pour tester
 ## Description du Modèle 
 
 ### Prétraitement des Images
-Les images sont d'abord converties en système BGR pour l'utilisation avec la bibliothèque OpenCV. Nous appliquons ensuite une binarisation pour simplifier la détection des contours en accentuant ces derniers, ce qui permet une meilleure distinction entre les pièces et l'arrière-plan. Après la détection de contours, nous filtrons ceux-ci en fonction de leur taille et aire pour réduire le bruit et isoler les régions d'intérêt correspondant aux pièces. Cette étape préparatoire est cruciale pour la réussite de la classification ultérieure.
+- Conversion en system BGR pour utiliser la bibliothèque OpenCV
+- Binarisation: pour préparer a et simplifier la détection de contour en les accentuant, permettre une meilleure distinction entre les pièces et l'arrière-plan (changements brusques de valeurs de pixels)
+- Détection de contours avec OpenCV
+-  Filtrage de contours basé sur la taille et par aire: réduire le bruit (suppression des contours inutiles), et création de masque pour isoler la région d’interet ( pièce)
+-  Extraction et regroupement de contours dans une liste
+![image](https://github.com/Madovah/Coin_Detection/assets/139919291/a104134c-8493-42c6-9cd4-cafe4adb075c)
 
-### Méthode de Classification
-Le cœur de notre système repose sur l'utilisation de réseaux de neurones convolutionnels (CNN), reconnus pour leur efficacité dans le traitement d'images. Les CNN ont la capacité de découvrir et d'extraire des caractéristiques pertinentes des données, même celles qui ne sont pas immédiatement évidentes. En raison de similitudes dans les caractéristiques physiques des pièces de monnaie, telles que le diamètre, la couleur, et les inscriptions, le CNN se révèle être un choix judicieux pour notre objectif de classification.
 
-### Évaluation du Modèle
-L'évaluation de notre modèle se fait au cours de son entraînement, en surveillant à la fois l'exactitude générale et la perte, ainsi que l'exactitude et la perte de validation. Cette approche nous permet d'ajuster le modèle pour optimiser ses performances.
+### Méthode de Classification et evaluation
+Nous avons choisi de faire la classification CNN: une méthode efficace pour le traitement de d’images
+Mais pourquoi? : les CNN sont capable de trouver et extraire des caractéristiques pertinentes dans les données, parfois invisible pour le programmeur a l’œil nu. Cela dit, la plupart des pièces de monnaies se ressemblent dans plusieurs caractéristiques: diamètre, jeux de couleurs, symboles inscrits, etc.. c’est pour cela que nous avons opté pour cette méthode ( influencées par la contrainte de temps et charge de travail aussi), l’évaluation du modèle se fait dans le processus de l’entrainement (General accuracy and loss, validation accuracy and loss),
+![image](https://github.com/Madovah/Coin_Detection/assets/139919291/cdac2e47-eeb4-4027-8355-856df230137d)
 
 ### Résultats et Observations
 Les résultats varient en fonction des images testées, mettant en lumière certaines limitations de notre approche, telles que la difficulté à distinguer des pièces avec des caractéristiques très similaires ou des problèmes liés à l'orientation et au chevauchement des pièces. Cependant, notre modèle montre des performances prometteuses, en particulier avec des pièces de valeurs plus élevées.
@@ -73,7 +76,8 @@ Les résultats varient en fonction des images testées, mettant en lumière cert
 
 
 ### Conclusion
-Notre système de détection de pièces de monnaie démontre le potentiel des CNN pour automatiser le comptage de monnaies dans des images. Bien que des défis subsistent, en particulier en ce qui concerne la gestion du bruit de fond et des variations dans l'apparence des pièces, les résultats sont encourageants. Des travaux futurs pourront explorer des améliorations du prétraitement et l'utilisation de modèles CNN pré-entraînés pour améliorer davantage la précision de la classification.
+Les CNN sont idéaux pour classer les pièces de monnaie car ils capturent automatiquement les traits distinctifs des images, facilitant ainsi leur identification malgré les variations, mais cela exige beaucoup de travail et de pretraitements pour obtenir des resultats optimals.
+
 
 ## Contributeurs:
 Ce projet a été réalisé grâce à la contribution des membres suivants:</p>
